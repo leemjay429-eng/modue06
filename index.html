@@ -428,7 +428,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
    오른쪽에 여백이 보이는데도 제목이 3줄로 밀리던 문제를 없앤다.
    아이콘이 차지하던 자리는 메타 행의 padding-right로만 확보한다. */
 .contents_div #bnf-b8 .bnf-card__head{position:relative}
-@container bnfroot (max-width:587px){
+@container bnfroot (max-width:627px){
   .contents_div #bnf-b8 .bnf-poster{
     position:absolute;top:0;right:0;
     float:none;margin:0;
@@ -659,8 +659,8 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .bnf-h1br{display:inline}
 }
 
-/* ── 웹(패딩 포함 620~800px = 콘텐츠박스 588~768px) ── */
-@container bnfroot (min-width:588px){
+/* ── 웹(패딩 포함 660~800px = 콘텐츠박스 628~768px) ── */
+@container bnfroot (min-width:628px){
 
   .contents_div .bnf-page{
     background:var(--bnf-bg);
@@ -716,7 +716,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
     margin:0 0 20px 28px;border-radius:14px;
   }
   /* 아이콘형 : h2 블록에 맞춰 위 43px에서 시작하고, 높이도 h2 아래로 조금만 넘치게 */
-  /* 800 정렬을 기준으로, 620 까지 h2가 짧아지는 비율만큼만 내린다 (최대 +8px) */
+  /* 800 정렬을 기준으로, 660 까지 h2가 짧아지는 비율만큼만 내린다 (최대 +8px) */
   .contents_div .bnf-poster.is-icon{
     margin-top:calc(var(--bnf-icon-top-web, 47px) + clamp(0px, (768px - 100cqw) * 0.0444, 8px));
   }
@@ -852,11 +852,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 @container bnfroot (max-width:390px){
   .contents_div .bnf-br-mo{display:inline}
 }
-/* 인트로 리드문 : 모바일(웹 전환 588cqw 미만)에서 h1과 간격 */
-@media (max-width:619px){
+/* 인트로 리드문 : 모바일(웹 전환 628cqw 미만)에서 h1과 간격 */
+@media (max-width:659px){
   .contents_div .bnf-intro p{margin-top:10px}
 }
-@container bnfroot (max-width:587px){
+@container bnfroot (max-width:627px){
   .contents_div .bnf-intro p{margin-top:10px}
 }
 /* 인트로 리드문 : 한 줄(Pretendard 14.5px ≈ 275px)이 안 들어가는 320px대에서만 끊는다 */
@@ -899,7 +899,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 
 @supports not (container-type:inline-size){
-  @media (min-width:620px){
+  @media (min-width:660px){
     .contents_div .bnf-page{background:var(--bnf-bg)}
     .contents_div .bnf-h1br{display:none}
   }
@@ -1143,7 +1143,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .bnf-course__txt{
   position:absolute;left:0;right:0;bottom:0;
-  padding:30px 14px 34px;text-align:center;color:#fff;
+  padding:30px 14px 38px;text-align:center;color:#fff;   /* 모바일 하단 34 → 38px (+4) */
   background:linear-gradient(to bottom,rgba(12,26,62,0) 0%,rgba(12,26,62,.62) 38%,rgba(12,26,62,.88) 100%);
 }
 .contents_div .bnf-course__txt h3{
@@ -1156,6 +1156,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   font-size:clamp(12.5px, calc(.45cqw + 11px), 14.5px);line-height:1.5;letter-spacing:-.03em;
   word-break:keep-all;color:rgba(255,255,255,.92);
   font-weight:400;   /* 모바일 : 300 → 400 (웹도 컨테이너 쿼리에서 400) */
+  padding:0 3px;      /* 모바일 전용 좌우 +3px (웹은 컨테이너 쿼리에서 0) */
 }
 .contents_div .bnf-course__dots{
   position:absolute;left:0;right:0;bottom:16px;
@@ -1167,11 +1168,11 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .bnf-course__dots button[aria-current="true"]{width:18px;background:#fff}
 .contents_div .bnf-card dl.bnf-dl-cont>div:first-child{border-top:1px solid var(--bnf-line);padding-top:10px}
-@container bnfroot (min-width:588px){
+@container bnfroot (min-width:628px){
   .contents_div .bnf-course{margin:6px 0 24px}
   .contents_div .bnf-course__track{gap:14px;padding:0 24%;scroll-padding:0 24%}
   .contents_div .bnf-course__txt{padding:40px 24px 40px}
-  .contents_div .bnf-course__txt p{margin-top:10px}
+  .contents_div .bnf-course__txt p{margin-top:10px;padding:0}
   .contents_div .bnf-card dl.bnf-dl-cont>div:first-child{padding-top:13px}
 }
 .contents_div .bnf-course__track{cursor:grab}
@@ -1225,17 +1226,17 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
 }
 .contents_div .bnf-card__head.is-fit .bnf-card__meta,
 .contents_div .bnf-card__head.is-fit h2{padding-right:calc(var(--bnf-icon-slot) + var(--bnf-icon-gap))}
-@container bnfroot (min-width:588px){
+@container bnfroot (min-width:628px){
   .contents_div .bnf-card__head.is-fit{--bnf-icon-slot:var(--bnf-poster-w);--bnf-icon-gap:28px}
 }
 
-/* 웹 전용 줄바꿈 : 588px 이상에서만 끊는다 */
+/* 웹 전용 줄바꿈 : 628px 이상에서만 끊는다 */
 .contents_div .bnf-brweb{display:none}
-/* 모바일 전용 줄바꿈 : 588px 이상(웹)에서는 숨긴다 */
+/* 모바일 전용 줄바꿈 : 628px 이상(웹)에서는 숨긴다 */
 .contents_div .bnf-brmo{display:inline}
-/* 모바일 전용 문단 나눔 : 588px 미만에서만 문단 간격(리드문 연속 간격 10px)으로 띄운다 */
+/* 모바일 전용 문단 나눔 : 628px 미만에서만 문단 간격(리드문 연속 간격 10px)으로 띄운다 */
 .contents_div .bnf-mopara{display:block;margin-top:10px}
-@container bnfroot (min-width:588px){
+@container bnfroot (min-width:628px){
   .contents_div .bnf-brweb{display:inline}
   .contents_div .bnf-mopara{display:inline;margin-top:0}
   .contents_div .bnf-brmo{display:none}
@@ -1394,7 +1395,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
           <div class="bnf-course__fig"><img src="img/호남권예술&amp;스파.jpg" alt="" loading="lazy" decoding="async"></div>
           <div class="bnf-course__txt">
             <h3>호남권 예술&amp;스파</h3>
-            <p>담양 소쇄원, 광주 국립아시아문화전당⁠·사직공원전망타워, 전주 봉강요 도예체험⁠·구이안덕마을, 전주한옥마을⁠·경기전</p>
+            <p>담양 소쇄원, 광주 국립아시아문화전당⁠·사직공원전망타워, 전주 봉강요 도예체험⁠·구이안덕마을, 전주한옥마을</p>
           </div>
         </li>
         <li class="bnf-course__slide" aria-roledescription="slide" aria-label="3 / 4">
