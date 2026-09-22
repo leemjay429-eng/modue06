@@ -1155,7 +1155,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   margin-top:6px;
   font-size:clamp(12.5px, calc(.45cqw + 11px), 14.5px);line-height:1.5;letter-spacing:-.03em;
   word-break:keep-all;color:rgba(255,255,255,.92);
-  font-weight:300;
+  font-weight:400;   /* 모바일 : 300 → 400 (웹도 컨테이너 쿼리에서 400) */
 }
 .contents_div .bnf-course__dots{
   position:absolute;left:0;right:0;bottom:16px;
@@ -1239,7 +1239,7 @@ if(location.protocol==='file:'||location.hostname.indexOf('github.io')>-1){
   .contents_div .bnf-brweb{display:inline}
   .contents_div .bnf-mopara{display:inline;margin-top:0}
   .contents_div .bnf-brmo{display:none}
-  /* 캐러셀 설명 : 웹은 기본 두께, 모바일은 Light 300 */
+  /* 캐러셀 설명 : 웹·모바일 모두 400 */
   .contents_div .bnf-course__txt p{font-weight:400}
 }
 
